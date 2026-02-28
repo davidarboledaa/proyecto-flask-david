@@ -53,5 +53,8 @@ def eliminar_producto(id):
     db.session.commit()
     return redirect(url_for('gestionar_inventario'))
 
-if __name__ == '__main__':
-    app.run(debug=True)
+56:with app.app_context():
+57:    db.create_all()  
+58:
+59:if __name__ == '__main__':
+60:    app.run(debug=True)
