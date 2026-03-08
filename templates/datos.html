@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Persistencia Semana 12 - DavidTech</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2 class="text-primary text-center mb-4">Datos del Archivo JSON (Persistencia Local)</h2>
+        <div class="card shadow">
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Producto</th>
+                            <th>Stock</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for p in productos_archivo %}
+                        <tr>
+                            <td>{{ p.nombre }}</td>
+                            <td>{{ p.cantidad }}</td>
+                            <td>${{ p.precio }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <div class="text-center mt-3">
+                    <a href="/inventario" class="btn btn-secondary">Volver al Inventario</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
